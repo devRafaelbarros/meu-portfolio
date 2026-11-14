@@ -1,0 +1,443 @@
+:root {
+    --ciano: #00e5ff;
+    --roxo: #a855f7;
+    --fundo: #0a0e1a;
+    --texto: #b8c4d9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--texto);
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--fundo);
+    background-image:
+        radial-gradient(circle at 20% 10%, rgba(168, 85, 247, 0.25), transparent 40%),
+        radial-gradient(circle at 80% 90%, rgba(0, 229, 255, 0.2), transparent 40%),
+        linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+    background-size: auto, auto, 40px 40px, 40px 40px;
+    background-attachment: fixed;
+}
+
+/* ---------- Menu fixo ---------- */
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(10, 14, 26, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--ciano);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    color: var(--ciano);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    border-color: var(--ciano);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+}
+
+/* ---------- Layout ---------- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 50px 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+h1 {
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    background: linear-gradient(90deg, var(--ciano), var(--roxo));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.5));
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: var(--ciano);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-top: 0;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    text-align: center;
+    padding: 80px 0 60px;
+}
+
+.foto {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--ciano);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
+    margin: 0 auto 20px;
+}
+
+.etiqueta {
+    color: var(--roxo);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Efeito de digitação */
+.digitando {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--roxo);
+    width: 0;
+    animation: digitar 3s steps(38) forwards, piscar 0.8s step-end infinite;
+}
+
+@keyframes digitar {
+    to {
+        width: 52ch;
+    }
+}
+
+@keyframes piscar {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.subtitulo {
+    max-width: 600px;
+    margin: 20px auto 30px;
+}
+
+/* ---------- Botões ---------- */
+.botoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--fundo);
+    background: linear-gradient(90deg, var(--ciano), var(--roxo));
+    padding: 12px 28px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px var(--roxo);
+}
+
+.btn-contorno {
+    background: transparent;
+    color: var(--ciano);
+    border-color: var(--ciano);
+}
+
+.btn-contorno:hover {
+    box-shadow: 0 0 25px var(--ciano);
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+    border-color: var(--roxo);
+}
+
+.grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ---------- Habilidades ---------- */
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skills span {
+    padding: 6px 16px;
+    font-weight: 600;
+    color: var(--ciano);
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    border-radius: 30px;
+}
+
+.barras {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.barra span {
+    font-weight: 600;
+    color: #dfe9ff;
+}
+
+.trilho {
+    height: 10px;
+    margin: 6px 0 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nivel {
+    height: 100%;
+    background: linear-gradient(90deg, var(--ciano), var(--roxo));
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--ciano);
+}
+
+/* ---------- Contato ---------- */
+.contato-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: -10px auto 30px;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.contato-info,
+.formulario {
+    text-align: left;
+}
+
+.lista-contato {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-contato li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.icone {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ciano);
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    border-radius: 50%;
+}
+
+.lista-contato a {
+    color: #dfe9ff;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.3s ease;
+}
+
+.lista-contato a:hover {
+    color: var(--ciano);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario label {
+    font-weight: 600;
+    color: var(--ciano);
+    margin-bottom: -8px;
+}
+
+.formulario input,
+.formulario textarea {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 16px;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--ciano);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario .btn {
+    align-self: center;
+}
+
+.status {
+    min-height: 24px;
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    color: var(--ciano);
+}
+
+/* ---------- Botão voltar ao topo ---------- */
+.topo-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    text-decoration: none;
+    color: var(--fundo);
+    background: linear-gradient(90deg, var(--ciano), var(--roxo));
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--roxo);
+    transition: transform 0.3s ease;
+}
+
+.topo-btn:hover {
+    transform: translateY(-4px);
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+footer p {
+    font-size: 16px;
+    color: #6b7a99;
+    margin: 0;
+}
+
+/* ---------- Responsivo (celular) ---------- */
+@media (max-width: 700px) {
+    .topo {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero {
+        padding-top: 50px;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+}

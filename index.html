@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Barros | Desenvolvedor Front-end</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <a href="#inicio" class="logo">Rafael Barros</a>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="inicio" class="hero">
+            <img src="foto.jpg" alt="Foto de Rafael Barros" class="foto" onerror="this.style.display='none'">
+            <p class="etiqueta digitando">// desenvolvedor front-end em formação</p>
+            <h1>Olá, eu sou Rafael Barros</h1>
+            <p class="subtitulo">Estou aprendendo programação e construindo meus primeiros projetos com HTML, CSS e JavaScript.</p>
+            <div class="botoes">
+                <a href="#projetos" class="btn">Ver projetos</a>
+                <a href="#contato" class="btn btn-contorno">Fale comigo</a>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre mim</h2>
+            <div class="card">
+                <p>Meu objetivo é conseguir meu primeiro estágio ou emprego em tecnologia. Estudo todos os dias e coloco em prática cada novo conceito.</p>
+
+                <div class="skills">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>React (em breve)</span>
+                    <span>Git</span>
+                </div>
+
+                <div class="barras">
+                    <div class="barra">
+                        <span>HTML5</span>
+                        <div class="trilho"><div class="nivel" style="width: 70%"></div></div>
+                    </div>
+                    <div class="barra">
+                        <span>CSS3</span>
+                        <div class="trilho"><div class="nivel" style="width: 60%"></div></div>
+                    </div>
+                    <div class="barra">
+                        <span>JavaScript</span>
+                        <div class="trilho"><div class="nivel" style="width: 30%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <section id="projetos">
+            <h2>Projetos</h2>
+            <div class="grade">
+                <article class="card">
+                    <h3>Meu primeiro site</h3>
+                    <p>Página criada com HTML e CSS, com visual futurista.</p>
+                </article>
+                <article class="card">
+                    <h3>Lista de tarefas</h3>
+                    <p>Em breve: app feito com JavaScript.</p>
+                </article>
+                <article class="card">
+                    <h3>Consumo de API</h3>
+                    <p>Em breve: app que busca dados reais da internet.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p class="contato-intro">Estou em busca do meu primeiro estágio ou emprego em tecnologia. Vamos conversar?</p>
+
+            <div class="contato-grid">
+                <div class="card contato-info">
+                    <h3>Fale comigo</h3>
+                    <ul class="lista-contato">
+                        <li>
+                            <span class="icone">✉</span>
+                            <a href="mailto:raffzaccont@gmail.com">raffzaccont@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="icone">in</span>
+                            <a href="https://www.linkedin.com/in/rafaelbarrosdacosta" target="_blank" rel="noopener">LinkedIn</a>
+                        </li>
+                        <li>
+                            <span class="icone">&lt;/&gt;</span>
+                            <a href="https://github.com/SEUUSUARIO" target="_blank" rel="noopener">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <form class="formulario" id="form-contato">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Seu nome" required>
+
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+
+                        <button type="submit" class="btn">Enviar mensagem</button>
+                        <p class="status" id="status"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 - Rafael Barros</p>
+    </footer>
+
+    <a href="#inicio" class="topo-btn" aria-label="Voltar ao topo">↑</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
