@@ -27,6 +27,7 @@ body {
         linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
     background-size: auto, auto, 40px 40px, 40px 40px;
     background-attachment: fixed;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* ---------- Menu fixo ---------- */
@@ -53,6 +54,7 @@ body {
 
 nav {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -72,6 +74,23 @@ nav a:hover {
     box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
 }
 
+/* ---------- Botão de tema ---------- */
+.tema-btn {
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--ciano);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.tema-btn:hover {
+    box-shadow: 0 0 15px var(--ciano);
+    transform: rotate(20deg);
+}
+
 /* ---------- Layout ---------- */
 .container {
     max-width: 1000px;
@@ -83,9 +102,7 @@ section {
     padding: 50px 0;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: 'Orbitron', sans-serif;
 }
 
@@ -154,15 +171,11 @@ p {
 }
 
 @keyframes digitar {
-    to {
-        width: 52ch;
-    }
+    to { width: 52ch; }
 }
 
 @keyframes piscar {
-    50% {
-        border-color: transparent;
-    }
+    50% { border-color: transparent; }
 }
 
 .subtitulo {
@@ -205,9 +218,7 @@ p {
 
 .btn-contorno:hover {
     box-shadow: 0 0 25px var(--ciano);
-}
-
-/* ---------- Cards ---------- */
+}/* ---------- Cards ---------- */
 .card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -312,7 +323,8 @@ p {
     width: 40px;
     height: 40px;
     display: flex;
-    align-items: center;    justify-content: center;
+    align-items: center;
+    justify-content: center;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
@@ -415,6 +427,53 @@ footer p {
     font-size: 16px;
     color: #6b7a99;
     margin: 0;
+}
+
+/* ---------- Modo claro ---------- */
+body.claro {
+    --ciano: #0077b6;
+    --roxo: #7c3aed;
+    --fundo: #f4f7fb;
+    --texto: #334155;
+    background-image:
+        radial-gradient(circle at 20% 10%, rgba(124, 58, 237, 0.12), transparent 40%),
+        radial-gradient(circle at 80% 90%, rgba(0, 119, 182, 0.12), transparent 40%),
+        linear-gradient(rgba(0, 119, 182, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 119, 182, 0.06) 1px, transparent 1px);
+}
+
+.claro .topo {
+    background: rgba(244, 247, 251, 0.85);
+}
+
+.claro .card {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.claro h2,
+.claro .logo {
+    text-shadow: none;
+}
+
+.claro h3,
+.claro .barra span,
+.claro .lista-contato a {
+    color: #0f172a;
+}
+
+.claro .formulario input,
+.claro .formulario textarea {
+    color: #0f172a;
+    background: #ffffff;
+}
+
+.claro .trilho {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.claro footer p {
+    color: #64748b;
 }
 
 /* ---------- Responsivo (celular) ---------- */

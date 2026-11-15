@@ -1,3 +1,4 @@
+// ---------- Formulário de contato ----------
 const formulario = document.getElementById('form-contato');
 const status = document.getElementById('status');
 
@@ -18,4 +19,22 @@ formulario.addEventListener('submit', function (evento) {
 
     status.textContent = 'Abrindo seu aplicativo de e-mail...';
     formulario.reset();
+});
+
+// ---------- Modo claro / escuro ----------
+const botaoTema = document.getElementById('tema');
+
+function aplicarTema(tema) {
+    document.body.classList.toggle('claro', tema === 'claro');
+    botaoTema.textContent = tema === 'claro' ? '🌙' : '☀️';
+}
+
+// Ao abrir o site, usa o tema que a pessoa escolheu da última vez
+const temaSalvo = localStorage.getItem('tema') || 'escuro';
+aplicarTema(temaSalvo);
+
+botaoTema.addEventListener('click', function () {
+    const novoTema = document.body.classList.contains('claro') ? 'escuro' : 'claro';
+    aplicarTema(novoTema);
+    localStorage.setItem('tema', novoTema);
 });
